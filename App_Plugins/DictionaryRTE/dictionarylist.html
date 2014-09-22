@@ -1,0 +1,30 @@
+﻿<div class="umb-panel" ng-controller="ov.DictionaryDialogCtrl" ng-init="init()">
+    <div class="umb-panel-header">
+        <h2>Dictionary items</h2>
+    </div>
+
+    <div class="umb-panel-body with-footer">
+        <select id="dictionaryKey" ng-model="dictionaryKey" ng-change="getValue()">
+            <option ng-repeat="item in items" value="{{item.id}}">{{item.key}}</option>
+        </select>
+        <select id="lngId" ng-model="lngId" ng-change="getValue()">
+            <option ng-repeat="lng in languages" value="{{lng.id}}">{{lng.languageISOCode}}</option>
+        </select>
+        
+        <p>The value is <span style="font-size: 130%; font-weight: bold">{{value}}</span></p>
+    </div>
+
+    <div class="umb-panel-footer">
+        <div class="umb-el-wrap umb-panel-buttons ng-binding">
+
+            <div class="btn-toolbar umb-btn-toolbar pull-right">
+
+                <a class="btn btn-link" href="#" ng-click="close()" prevent-default><localize key="general_cancel">Cancel</localize></a>
+                <button class="btn btn-primary" ng-click="insert()">
+                    <localize key="buttons_select">Select</localize>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
