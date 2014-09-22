@@ -31,7 +31,7 @@ namespace dotMailer.RTEDictionary.api
         public IEnumerable<ItemDictionary> GetDictionaryItems()
         {
             var res = Db.Query<ItemDictionary>(
-                    "SELECT distinct d.[key], d.id FROM [dbo].[cmsDictionary] d join [umbraco_dotMailer_v7].[dbo].[cmsLanguageText] lt on lt.UniqueId = d.id");
+                    "SELECT distinct d.[key], d.id FROM [dbo].[cmsDictionary] d join [dbo].[cmsLanguageText] lt on lt.UniqueId = d.id");
             return res;
         }
 
