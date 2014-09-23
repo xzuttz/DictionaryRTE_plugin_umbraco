@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace dotMailer.RTEDictionary
+namespace DictionaryRTE
 {
     public class Language
     {

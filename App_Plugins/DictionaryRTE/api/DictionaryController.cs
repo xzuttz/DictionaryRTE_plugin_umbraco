@@ -5,10 +5,9 @@ using System.Linq;
 using System.Web.Http;
 using Umbraco.Core;
 using Umbraco.Core.Persistence;
-using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 
-namespace dotMailer.RTEDictionary.api
+namespace DictionaryRTE.api
 {
     public class PostNode
     {
@@ -16,8 +15,8 @@ namespace dotMailer.RTEDictionary.api
         public Guid DictionaryId { get; set; }
     }
 
-    [PluginController("rteDictionary")]
-    public class DictionaryController : UmbracoAuthorizedApiController
+    [UmbracoAuthorize]
+    public class DictionaryController : UmbracoApiController
     {
         private UmbracoDatabase Db
         {
